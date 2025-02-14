@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "60649ebe-15db-4190-83b4-85906134abd2",
+		"name": "My APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17926679"
+	},
+	"item": [
+		{
+			"name": "Post API",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"FirstName\": \"Agenteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\r\n    \"LastName\": \"Jason\",\r\n    \"Gender\": \"Male\",\r\n    \"MobileNumber\": \"123-456-7896\",\r\n    \"EmailAddress\": \"agent.jason@example.com\",\r\n    \"Address\": \"1236 VIP Blvd\",\r\n    \"City\": \"New York\",\r\n    \"State\": \"NY\",\r\n    \"Zip\": \"10001\",\r\n    \"ContactMethod\": \"Phone\",\r\n    \"AgentID\": 2,\r\n    \"PropertyID\": 13,\r\n    \"CreatedBy\": \"admin\",\r\n    \"ModifiedBy\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Prospect Count",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/getProspectsCount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getProspectsCount"
+					],
+					"query": [
+						{
+							"key": "groupBy",
+							"value": "PropertyID",
+							"description": "AgentID, PropertyID",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List Prospects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/getAllProspects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getAllProspects"
+					],
+					"query": [
+						{
+							"key": "RecordsPerPage",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Prospect with Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/getProspectFirstName?FirstName=john",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getProspectFirstName"
+					],
+					"query": [
+						{
+							"key": "FirstName",
+							"value": "john"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find and Count Prospect",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/findCountProspect?FirstName=john",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"findCountProspect"
+					],
+					"query": [
+						{
+							"key": "FirstName",
+							"value": "john"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindOrCreate Prospect",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/findCreateProspect?EmailAddress=captain.america@example.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"findCreateProspect"
+					],
+					"query": [
+						{
+							"key": "EmailAddress",
+							"value": "captain.america@example.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Raw Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/getfromRawQueries?FirstName=John",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getfromRawQueries"
+					],
+					"query": [
+						{
+							"key": "FirstName",
+							"value": "John"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ProspectID\":1,\r\n    // \"FirstName\": \"AgentCrack\",\r\n    // \"LastName\": \"Rocket\",\r\n    // \"Gender\": \"Male\",\r\n    // \"MobileNumber\": \"123-456-7894\",\r\n    \"EmailAddress\": \"agent.jason2@example.com\"\r\n    // \"Address\": \"1235 Sunset Blvd\",\r\n    // \"City\": \"New York\",\r\n    // \"State\": \"NY\",\r\n    // \"Zip\": \"10001\",\r\n    // \"ContactMethod\": \"Phone\",\r\n    // \"AgentID\": 1,\r\n    // \"PropertyID\": 11,\r\n    // \"CreatedBy\": \"admin\",\r\n    // \"ModifiedBy\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/updateProspect",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"updateProspect"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
